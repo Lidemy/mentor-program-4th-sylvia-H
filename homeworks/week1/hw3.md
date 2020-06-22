@@ -25,16 +25,16 @@ command line 就是通常被稱為**命令行**（Command Line）或**命令行�
 
 
 ## 環境設置 - 安裝 Command Line Tool
-*  Windows（git-bash）
-安裝 Git 的時候，會一併安裝 git-bash
-在 Windows 上面操作 command line 指令時可以使用 git-bash。
+*  Windows（git-bash）  
+安裝 Git 的時候，會一併安裝 git-bash  
+在 Windows 上面操作 command line 指令時可以使用 git-bash。  
 Git 官網：https://git-scm.com/
 
-* Windows（Cmder）
-或是安裝 [Cmder](http://cmder.net/)
-可參考保哥的文章: [介紹好用工具：Cmder ( 具有 Linux 溫度的 Windows 命令提示字元工具 )](https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder)
+* Windows（Cmder）  
+或是安裝 [Cmder](http://cmder.net/)  
+可參考保哥的文章: [介紹好用工具：Cmder ( 具有 Linux 溫度的 Windows 命令提示字元工具 )](https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder)  
 
-* Mac (iTerm2)
+* Mac (iTerm2)  
 在 Mac 上面可以直接使用 Terminal.app，或是安裝 iTerm2  
 可參考(1): [[心得] iTerm2 + zsh，打造更好的工作環境](http://huli.logdown.com/posts/402147-iterm2-zsh-better-environment)  
 可參考(2): [超簡單！十分鐘打造漂亮又好用的 zsh command line 環境](https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f)  
@@ -74,8 +74,8 @@ Git 官網：https://git-scm.com/
 <br>
  
 ### man
-:pushpin: ==這個指令 windows 不支援== 
-:pushpin: 可改用 `help` 代替部分功能。或是在指令後方加`--help` 可以得到更詳盡的功能說明。
+:pushpin: 這個指令 windows 不支援  
+:pushpin: 可改用 `help` 代替部分功能。或是在指令後方加`--help` 可以得到更詳盡的功能說明。  
 * **`man`** (manual) 指令使用手冊
 * **`clear`** (clear) 畫面清除
 * **`q`** (quit) 離開
@@ -94,8 +94,8 @@ Git 官網：https://git-scm.com/
 * **`rm`** (remove) 刪除檔案
 * **`rmdir`** (remove directory) 刪除資料夾
 * **`rm -r`** & **`rm -R`** (remove root) 刪除資料夾(及底下所有檔案)
-* **`rm -f`** (remove forcely) 強制移除
-:pushpin: ==小心使用==
+* **`rm -f`** (remove forcely) 強制移除  
+:pushpin: 小心使用
  
 <br>
   
@@ -190,7 +190,7 @@ Git 官網：https://git-scm.com/
   
 <br>
   
-  > [鳥哥的 Linux 私房菜 - 第九章、vim 程式編輯器](http://linux.vbird.org/linux_basic/0310vi.php)
+  > [鳥哥的 Linux 私房菜 - 第九章、vim 程式編輯器](http://linux.vbird.org/linux_basic/0310vi.php)  
   > vi 共分為三種模式，分別是『一般指令模式』、『編輯模式』與『指令列命令模式』。：
   > 
   > * 一般指令模式（預設模式）（command mode） 
@@ -213,18 +213,25 @@ Git 官網：https://git-scm.com/
 > h0w 哥：「我想用 command line 建立一個叫做 wifi 的資料夾，並且在裡面建立一個叫 afu.js 的檔案。」
 
 1. 打開終端機程式 (git-bash / Terminal.app / iTerm2) 
+  
 2. 確認目前所在位置  
     ```bash=
     $ pwd
     ```
-
-4. 用 `cd` 指令移動到想要建立新資料夾的位置  
+  
+4. 用 `cd` 指令移動到想要建立新資料夾的位置 
+  
 5. 建立一個叫做 wifi 的資料夾  
     ```bash=
     $ mkdir wifi
     ```
-
-6. 在 wifi 資料夾中建立一個叫 afu.js 的檔案  
+  
+6. 進入 wifi 資料夾  
+    ```bash=
+    $ cd wifi
+    ```
+  
+7. 在 wifi 資料夾中建立一個叫 afu.js 的檔案  
     ```bash=
     $ touch afu.js
     ```
