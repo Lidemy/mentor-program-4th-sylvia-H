@@ -95,8 +95,8 @@
 
 <br>
 
-12. **進入學習系統的 [作業列表](https://learning.lidemy.com/homeworks) 後，點擊 新增作業**
-選定週次後，貼上 PR 連結，按下 送出。
+12. **進入學習系統的 [作業列表](https://learning.lidemy.com/homeworks) 後，點擊 新增作業**  
+**選定週次後，貼上 PR 連結，按下 送出。**
 ![](https://i.imgur.com/WcXH2Jz.png)
 
 <br>
@@ -134,11 +134,14 @@
     ```bash=
     $ git checkout master
     ```
+
 2. **把老師的課綱 pull 下來**
     ```bash=
     $ git pull https://github.com/Lidemy/mentor-program-4th.git master
     ```
+
 3. **若進入 vim 編輯器，鍵入 `:wq` 存檔跳出編輯器**
+
 4. **把本地端已更新過的課綱，push 上遠端 GitHub 的 master**
     ```bash=
     $ git push origin master

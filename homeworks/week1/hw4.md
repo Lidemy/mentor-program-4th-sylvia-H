@@ -165,6 +165,11 @@ nothing added to commit but untracked files present (use "git add" to track)
 * `.gitignore` 不加入版控的檔案清單
 * 放在 .gitignore 檔案中的檔名會自動被忽略，不會加入版本控制，也不會進入工作目錄（working directory）。
 
+
+例如：  
+資料夾中有 code_no.js 和 test.js 兩個檔案。  
+把 test.js 加入 .gitignore文件的話，再用 `git status` 指令查看，就會看不到 test.js 這個檔案。  
+
 ```dos=
 /** git status 查看版控狀態**/
 /** 不在版控狀態的檔案有 code_no.js 及 test.txt**/
@@ -178,17 +183,18 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 
 
-/**建立 .gitignore文件**/
+/**建立 .gitignore 文件**/
 $ touch .gitignore
 
 
-/**執行 vim .gitignore**/
+/**執行 vim .gitignore 編輯 .gitignore文件**/
 /**在 .gitignore 檔案中，把要忽略版控的檔案加入清單**/
+/**把 test.js 加入 .gitignore文件**/
 $ vim .gitignore
 
 
 /** git status 查看版控狀態**/
-/** 不在版控狀態的檔案有 .gitignore 和 code_no.js**/
+/** 不在版控狀態的檔案剩下 .gitignore 和 code_no.js**/
 $ git status
 On branch master
 Untracked files:
@@ -208,8 +214,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 * 執行 `git commit` 把進入 staged 狀態的檔案提交（commit）上去成為新建版本
 * `git commit -m <message>` 提交（commit）新版本，並輸入 commit message 作為版本註解
 * 如果作業系統是 Windows，注意後面的字串一定要用雙引號，用單引號的話會出錯。
-* `git commit -am <message>` 。這個指令是把 `git add .` 和 `git commit -m` 兩個指令合併，會把資料夾內所有已經加入版控的檔案 commit 並輸入 commit message。
-:pushpin: ==**注意:** 如果有新檔案之前沒有 git add 過，則執行 git commit -am 的時候不會一起加入版控== 
+* `git commit -am <message>` 。這個指令是把 `git add .` 和 `git commit -m` 兩個指令合併，會把資料夾內所有已經加入版控的檔案 commit 並輸入 commit message。  
+:pushpin: **注意:** 如果有新檔案之前沒有 git add 過，則執行 git commit -am 的時候不會一起加入版控 
 
 ```dos=
 /**使用 git add 將 code_yes.js 加入版控**/
