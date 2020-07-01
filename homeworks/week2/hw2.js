@@ -7,3 +7,11 @@ function capitalize(str) {
 }
 
 console.log(capitalize('hello'));
+
+
+
+/* 自我檢討，更好的寫法：
+function capitalize(str) {
+    return str[0].toUpperCase() + str.slice(1);
+}
+*/
