@@ -3,7 +3,7 @@ function search(arr, n){                    //傳入一組陣列 arr 和搜尋�
 	var S = 0;                              //設 S 為陣列搜尋起點的 index 值
 	var E = arr.length - 1;                 //設 E 為陣列搜尋終點的 index 值
 
-	while(S <= E){                          //起點 index 值小於終點 index 值便進入 while 迴圈
+	while(S <= E){                          //起點 index 值小於等於終點 index 值便進入 while 迴圈
     
 		var T = Math.floor( (S+E)/2 );      //設 T 為陣列中點 index 值
         
