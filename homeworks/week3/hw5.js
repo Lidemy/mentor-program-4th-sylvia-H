@@ -10,22 +10,42 @@ rl.on('line', (line) => {
   lines.push(line);
 });
 
+function judge(A, B, K) {
+  if (K === 1) {
+    if (A > B) {
+      console.log('A');
+    } else {
+      console.log('B');
+    }
+  }
+
+  if (K === -1) {
+    if (A > B) {
+      console.log('B');
+    } else {
+      console.log('A');
+    }
+  }
+}
+
 function solve(input) {
   const M = Number(input[0]);
 
   for (let i = 1; i <= M; i += 1) {
     const arr = input[i].split(' ');
 
-    const A = Number(arr[0]);
-    const B = Number(arr[1]);
+    const A = arr[0];
+    const B = arr[1];
     const K = Number(arr[2]);
 
-    if (A * K === B * K) {
+    if (A === B) {
       console.log('DRAW');
-    } else if (A * K > B * K) {
+    } else if (Number(A.length) * K > Number(B.length) * K) {
       console.log('A');
-    } else {
+    } else if (Number(A.length) * K < Number(B.length) * K) {
       console.log('B');
+    } else if (Number(A.length) * K === Number(B.length) * K) {
+      judge(A, B, K);
     }
   }
 }
