@@ -214,3 +214,80 @@ function solve(input) {
   
 **【觀摩學習】**  
 解題後看了 @awuuu0716 同學的[作業](https://github.com/Lidemy/mentor-program-4th-awuuu0716/blob/master/homeworks/week3/hw5.js)和 @ahwei777 同學的[作業](https://github.com/Lidemy/mentor-program-4th-ahwei777/blob/master/homeworks/week3/hw6.md)，才知道還可以用新語法 `BigInt()` 來處理最大整數的問題。
+
+
+<br>
+<br>
+
+
+## 超級挑戰題 - LIOJ1052 - 貪婪的小偷 Part2
+
+```javascript=
+function solve(input) {
+  const tmp = input[0].split(' ');
+  const items = Number(tmp[0]);
+  const bagSize = Number(tmp[1]);
+  const weight = [];
+  const value = [];
+
+  for (let i = 1; i <= items; i += 1) {
+    const tmpArray = input[i].split(' ');
+    weight.push(Number(tmpArray[0]));
+    value.push(Number(tmpArray[1]));
+  }
+
+  const bagMatrix = [];
+
+  for (let y = 0; y <= bagSize; y += 1) {
+    bagMatrix[y] = [];
+    for (let x = 0; x < items; x += 1) {
+      if (y === 0) {
+        bagMatrix[y][x] = 0;
+      }
+      if (y < weight[x]) {
+        bagMatrix[y][x] = bagMatrix[y][x - 1] || 0;
+      }
+      if (y >= weight[x]) {
+        const predictValue = (bagMatrix[y - weight[x]][x - 1] || 0) + value[x];
+        const preValue = (bagMatrix[y][x - 1] || 0);
+        bagMatrix[y][x] = Math.max(predictValue, preValue);
+      }
+    }
+  }
+
+  const sumValue = [];
+  for (let i = 0; i <= bagSize; i += 1) {
+    sumValue.push(bagMatrix[i][items - 1]);
+  }
+  const maxValue = Math.max.apply(null, sumValue);
+  console.log(maxValue);
+}
+```
+
+
+**【解題邏輯】**  
+* 將輸入值設為常數 `items`（物品數量）和 `bagSize`（背包承重）。
+* 使用 for 迴圈將輸入值分別設為陣列 `weight`（物品重量）和陣列 `value`（物品價值）。
+* 利用以上兩個常數、兩個陣列跑雙重 for 迴圈，展開一組多維陣列 `bagMatrix`。
+* 多維陣列 `bagMatrix` 的行數（Column，可視為陣列 x 軸）等於 `items`（物品數量），列數（Row，可視為陣列 y 軸）等於 `bagSize`（背包承重）。
+* 代入值的方式是先判斷 `bagSize`（背包承重）是否能容納  `weight`（物品重量）。 
+  * 當 y 軸數值為 0 時，無法裝任何東西，因此陣列元素值亦為 0。
+  * 當 y 軸數值小於 `weight[x]`（各項物品重量）時，無法容納該項物品，故陣列元素值應維持 `bagMatrix[y][x - 1] ` 前一個 x 軸的元素值，或是為 0。
+  * 當 y 軸數值等於或大於 `weight[x]`（各項物品重量）時，就要判斷是否要裝入該項物品，若 `bagSize`（背包承重）還能容納新物品就可以加入新物品的重量，若已經裝入前一項物品導致裝入新物品會超重的話，就無法裝入新物品。判斷是否加入新物品的方式是，先將當前 y 軸值減掉 `weight[x]`（該項物品重量），表示還沒裝進新物品前的背包容量，以此值找到相對應的 y 軸，把前一項物品（`weight[x-1]`）與新的 y 軸相對應的陣列元素值加上 `weight[x]`（新物品重量），所得出的預估值設為常數 `predictValue`；再找到當前 y 軸值與前一項物品相對應的陣列元素值 `bagMatrix[y][x - 1]`，把此值設為常數 `preValue`。接著比較常數 `predictValue` 和常數 `preValue` 兩者孰大，取較大的值代入目前的陣列元素值 `bagMatrix[y][x]`。
+  * 完成多維陣列 `bagMatrix`
+* 取出多維陣列 `bagMatrix` 的最後一行，設成陣列 `sumValue`
+* 以 `Math.max.apply(null, arr)` 方法取出陣列 `sumValue` 中的最大值，即為背包可裝入物品價值的最大值。
+  
+<br>
+  
+**【心得】**  
+採用「動態規劃」（Dynamic programming）分階段求最佳解的解題方式大大打開了我的視野，尤其是參考資料中把輸入值展開成多維陣列的求解法真的非常精采，雖然是藉由慢慢歸納資料才解出這一題，讓我有點心虛，但在釐清解題思維的過程裡獲益良多，非常開心。
+  
+<br>
+  
+**【參考資料】**  
+* [背包問題（Knapsack Problem）](https://openhome.cc/Gossip/AlgorithmGossip/KnapsackProblem.htm)
+* [Day24-動態規劃-0/1背包問題](https://ithelp.ithome.com.tw/articles/10226021)  
+* [js取陣列最大值，最小值的方式](https://www.itread01.com/content/1543920722.html)
+
+
