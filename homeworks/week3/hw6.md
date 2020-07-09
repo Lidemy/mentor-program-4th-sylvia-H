@@ -222,6 +222,8 @@ function solve(input) {
 
 ## 超級挑戰題 - LIOJ1052 - 貪婪的小偷 Part2
 
+[LIOJ1052](https://oj.lidemy.com/problem/1052)  
+
 ```javascript=
 function solve(input) {
   const tmp = input[0].split(' ');
