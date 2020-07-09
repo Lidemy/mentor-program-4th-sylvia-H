@@ -20,12 +20,7 @@ function solve(input) {
         factor += 1;
       }
     }
-
-    if (input[i] !== 1 && factor === 1) {
-      console.log('Prime');
-    } else {
-      console.log('Composite');
-    }
+    console.log(input[i] !== 1 && factor === 1 ? 'Prime' : 'Composite');
     factor = 0;
   }
 }
