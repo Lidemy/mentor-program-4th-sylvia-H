@@ -17,12 +17,7 @@ function solve(input) {
   for (let i = str.length - 1; i >= 0; i -= 1) {
     res += str[i];
   }
-
-  if (res === str) {
-    console.log('True');
-  } else {
-    console.log('False');
-  }
+  console.log(res === str ? 'True' : 'False');
 }
 
 rl.on('close', () => {

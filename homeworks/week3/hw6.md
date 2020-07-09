@@ -76,12 +76,15 @@ function solve(input) {
         factor += 1;
       }
     }
+    console.log(input[i] !== 1 && factor === 1 ? 'Prime' : 'Composite');
 
-    if (input[i] !== 1 && factor === 1) {
-      console.log('Prime');
-    } else {
-      console.log('Composite');
-    }
+//  原先用 if-else 寫法，觀摩其他人作業後改成上一行的寫法
+//    if (input[i] !== 1 && factor === 1) {
+//      console.log('Prime');
+//    } else {
+//      console.log('Composite');
+//    }
+
     factor = 0;
   }
 }
@@ -120,12 +123,7 @@ function solve(input) {
   for (let i = str.length - 1; i >= 0; i -= 1) {
     res += str[i];
   }
-
-  if (res === str) {
-    console.log('True');
-  } else {
-    console.log('False');
-  }
+  console.log(res === str ? 'True' : 'False');
 }
 ```
 
