@@ -153,19 +153,11 @@ function solve(input) {
 ```javascript=
 function judge(A, B, K) {
   if (K === 1) {
-    if (A > B) {
-      console.log('A');
-    } else {
-      console.log('B');
-    }
+    console.log(A > B ? 'A' : 'B');
   }
 
   if (K === -1) {
-    if (A > B) {
-      console.log('B');
-    } else {
-      console.log('A');
-    }
+    console.log(A > B ? 'B' : 'A');
   }
 }
 
