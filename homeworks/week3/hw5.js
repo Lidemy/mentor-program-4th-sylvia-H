@@ -13,9 +13,7 @@ rl.on('line', (line) => {
 function judge(A, B, K) {
   if (K === 1) {
     console.log(A > B ? 'A' : 'B');
-  }
-
-  if (K === -1) {
+  } else {
     console.log(A > B ? 'B' : 'A');
   }
 }
@@ -32,11 +30,11 @@ function solve(input) {
 
     if (A === B) {
       console.log('DRAW');
-    } else if (Number(A.length) * K > Number(B.length) * K) {
+    } else if (A.length * K > B.length * K) {
       console.log('A');
-    } else if (Number(A.length) * K < Number(B.length) * K) {
+    } else if (A.length * K < B.length * K) {
       console.log('B');
-    } else if (Number(A.length) * K === Number(B.length) * K) {
+    } else {
       judge(A, B, K);
     }
   }
