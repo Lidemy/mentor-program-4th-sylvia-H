@@ -30,11 +30,9 @@ function solve(input) {
     for (let x = 0; x < items; x += 1) {
       if (y === 0) {
         bagMatrix[y][x] = 0;
-      }
-      if (y < weight[x]) {
+      } else if (y < weight[x]) {
         bagMatrix[y][x] = bagMatrix[y][x - 1] || 0;
-      }
-      if (y >= weight[x]) {
+      } else {
         const predictValue = (bagMatrix[y - weight[x]][x - 1] || 0) + value[x];
         const preValue = (bagMatrix[y][x - 1] || 0);
         bagMatrix[y][x] = Math.max(predictValue, preValue);
