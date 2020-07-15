@@ -15,8 +15,9 @@ request(
         return console.log('資料非 JSON 格式', e);
       }
       for (let i = 0; i < data.length; i += 1) {
-        return console.log(`${data[i].id} ${data[i].name}`);
+        console.log(`${data[i].id} ${data[i].name}`);
       }
+      return console.log('....');
     } return console.log('抓取資料失敗', err);
   },
 );
