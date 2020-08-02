@@ -1,0 +1,98 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif;
+}
+
+body{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.wrapper{
+    background-color: #fff;
+    box-sizing: border-box;
+    max-width: 645px;
+    margin: 50px auto;
+    padding: 55px 45px;
+    border-top: 8px solid #fad312;
+    box-shadow: 1.8px 2.4px 5px 0px rgba(0,0,0,0.3);
+}
+
+.title h1{
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: -1.8px;
+}
+
+.title__info{
+    margin-top: 36px;
+    font-size: 14px;
+    line-height: 2em;
+}
+
+.title__warning{
+    margin-top: 22px;
+    font-size: 16px;
+    color: #e74149;
+}
+
+/* form 表單區 */
+form .comment{
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.form__item{
+    margin-top: 55px;
+    font-size: 20px;
+}
+
+.form__item .required:after{
+    content: ' *';
+    font-size: 20px;
+    color: #e74149;
+}
+
+.form__item .text-input input{
+    width: 287px;
+    height: 24px;
+    border: 1px solid #d0d0d0;
+    margin-top: 18px;
+    font-size: 16px;
+}
+
+.form__item label{
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.form__submit{
+    margin-top: 55px;
+    border: none;
+    border-radius: 3px;
+    background-color: #fad312;
+    color: #000;
+    font-size: 15px;
+    text-align: center;
+    width: 92px;
+    padding: 12px 32px;
+}
+
+
+/* footer 頁尾 */
+footer{
+    font-size: 13px;
+    padding: 24px;
+    background-color: #000;
+    color: #999;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper{
+        margin: 0 auto;
+    }
+}
