@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Questrial&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     list-style: none;
     font-family: 'Noto Sans TC', sans-serif;
-    font-family: 'Questrial', sans-serif;
 }
 
 .wrapper{
@@ -30,6 +31,7 @@
 .nav__site-name{
     font-size: 36px;
     color: #489846;
+    font-family: 'Questrial', sans-serif;
 }
 
 .nav__list{
