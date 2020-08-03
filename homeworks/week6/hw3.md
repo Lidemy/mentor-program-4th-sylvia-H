@@ -122,7 +122,7 @@ width（寬）和 height（高）是整個 box 的寬高
 
 ### absolute 絕對定位
 `position: absolute`  
-依據某個參考點（往父層找不是 static 的元素）做定位，若找不到，就以 body 來定位。
+依據某個參考點（往上層找第一個 position 不是 static 的元素）做定位，若找不到，就以 body 來定位。
 
 <br>
 
