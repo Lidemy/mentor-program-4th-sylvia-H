@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>新拖延運動報名表單</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            <h1>新拖延運動報名表單</h1>
+            <div class="title__info">
+                <p>
+                    活動日期：2020/12/10 ~ 2020/12/11
+                <br>
+                    活動地點：台北市大安區新生南路二段1號
+                </p>
+            </div>
+            <p class="required">
+                必填 *
+            </p>
+        </div>
+        <form>
+            <div class="form__items">
+                <p class="item-title required">暱稱 </p>
+                <input class="text-input" type="text" placeholder="您的回答" required>
+            </div>
+            <div class="form__items">
+                <p class="item-title required">電子郵件 </p>
+                <input class="text-input" type="email" placeholder="您的電子郵件" required>
+            </div>
+            <div class="form__items">
+                <p class="item-title required">手機號碼 </p>
+                <input class="text-input" type="phone" placeholder="您的手機號碼" required>
+            </div>
+            <div class="form__items">
+                <p class="item-title required">報名類型 </p>
+                <div class="radio-input">
+                    <label>
+                        <input type="radio" name="type" id="sleep" value="sleep" required>
+                        躺在床上用想像力實作
+                    </label>
+                </div>
+                <div class="radio-input">
+                    <label>
+                        <input type="radio" name="type" id="phone" value="phone">
+                        趴在地上滑手機找現成的
+                    </label>
+                </div>
+            </div>
+            <div class="form__items">
+                <p class="item-title required">怎麼知道這個活動的？ </p>
+                <input class="text-input" name="reason" type="text" placeholder="您的回答" required>
+            </div>
+            <div class="form__items">
+                <p class="item-title">其他</p>
+                <p class="comment">對活動的一些建議</p>
+                <input class="text-input" type="text" placeholder="您的回答" required>
+            </div>
+            <input class="btn-submit" name="suggestion" type="submit" value="提交" />
+            <p class="comment">請勿透過表單送出您的密碼。</p>
+        </form>
+    </div>
+
+    <footer>© 2020 © Copyright. All rights Reserved.</footer>
+</body>
+</html>
