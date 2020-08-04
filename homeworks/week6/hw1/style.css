@@ -4,7 +4,11 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: "Questrial","arial","Microsoft JhengHei","微軟正黑體",sans-serif;
+}
+
+a{
+    text-decoration: none;
 }
 
 .wrapper{
@@ -31,7 +35,6 @@
 .nav__site-name{
     font-size: 36px;
     color: #489846;
-    font-family: 'Questrial', sans-serif;
 }
 
 .nav__list{
@@ -45,8 +48,6 @@
 
 .nav__list li a{
     display: block;
-    text-decoration: none;
-    color: #000;
     padding: 14px 25px;
     border-radius: 8px;
 }
@@ -135,7 +136,6 @@
     padding: 0 17px;
     font-size: 36px;
     font-weight: bold;
-    color: #000;
 }
 
 
