@@ -14,59 +14,52 @@
             <div class="title__info">
                 <p>
                     活動日期：2020/12/10 ~ 2020/12/11
-                    <br>
+                <br>
                     活動地點：台北市大安區新生南路二段1號
                 </p>
             </div>
-            <div class="title__warning">
-                * 必填
-            </div>
+            <p class="required">
+                必填 *
+            </p>
         </div>
-        
         <form>
-            <div class="form__item">
-                <p class="required">暱稱</p>
-                <div class="text-input">
-                    <input type="text" name="name" placeholder="您的回答" required>
+            <div class="form__items">
+                <p class="item-title required">暱稱 </p>
+                <input class="text-input" type="text" placeholder="您的回答" required>
+            </div>
+            <div class="form__items">
+                <p class="item-title required">電子郵件 </p>
+                <input class="text-input" type="email" placeholder="您的電子郵件" required>
+            </div>
+            <div class="form__items">
+                <p class="item-title required">手機號碼 </p>
+                <input class="text-input" type="phone" placeholder="您的手機號碼" required>
+            </div>
+            <div class="form__items">
+                <p class="item-title required">報名類型 </p>
+                <div class="radio-input">
+                    <label>
+                        <input type="radio" name="type" id="sleep" value="sleep" required>
+                        躺在床上用想像力實作
+                    </label>
+                </div>
+                <div class="radio-input">
+                    <label>
+                        <input type="radio" name="type" id="phone" value="phone">
+                        趴在地上滑手機找現成的
+                    </label>
                 </div>
             </div>
-            <div class="form__item">
-                <p class="required">電子郵件</p>
-                <div class="text-input">
-                    <input type="email" name="email" placeholder="您的電子郵件" required>
-                </div>
+            <div class="form__items">
+                <p class="item-title required">怎麼知道這個活動的？ </p>
+                <input class="text-input" name="reason" type="text" placeholder="您的回答" required>
             </div>
-            <div class="form__item">
-                <p class="required">手機號碼</p>
-                <div class="text-input">
-                    <input type="tel" name="phone" placeholder="您的手機號碼" required>
-                </div>
-            </div>
-            <div class="form__item">
-                <p class="required">報名類型</p>
-                <label>
-                  <input type="radio" id="bed" name="type" value="bed">
-                  躺在床上用想像力實作
-                </label>
-                <label>
-                  <input type="radio" id="phone" name="type" value="phone">
-                  趴在地上滑手機找現成的
-                </label>
-            </div>
-            <div class="form__item">
-                <p class="required">怎麼知道這個活動的？</p>
-                <div class="text-input">
-                    <input type="text" name="reason" placeholder="您的回答" required>
-                </div>
-            </div>
-            <div class="form__item">
-                <p>其他</p>
+            <div class="form__items">
+                <p class="item-title">其他</p>
                 <p class="comment">對活動的一些建議</p>
-                <div class="text-input">
-                    <input type="text" name="suggestion" placeholder="您的回答">
-                </div>
+                <input class="text-input" type="text" placeholder="您的回答" required>
             </div>
-            <input type="submit" class="form__submit" value="提交">
+            <input class="btn-submit" name="suggestion" type="submit" value="提交" />
             <p class="comment">請勿透過表單送出您的密碼。</p>
         </form>
     </div>
