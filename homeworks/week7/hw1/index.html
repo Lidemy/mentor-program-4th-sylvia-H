@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>新拖延運動報名表單</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            <h1>新拖延運動報名表單</h1>
+            <div class="title__info">
+                活動日期：2020/12/10 ~ 2020/12/11<br>
+                活動地點：台北市大安區新生南路二段1號
+            </div>
+            <p class="notice-required">必填 *</p>
+        </div>
+        <form>
+            <div class="form__items required hide-err">
+                <p class="item-title">暱稱</p>
+                <input name="nickname" type="text" placeholder="您的回答">
+                <p class="errMSG">請填寫暱稱。</p>
+            </div>
+            <div class="form__items required hide-err">
+                <p class="item-title">電子郵件</p>
+                <input name="email" type="text" placeholder="您的回答">
+                <p class="errMSG">請填寫電子郵件。</p>
+            </div>
+            <div class="form__items required hide-err">
+                <p class="item-title">手機號碼</p>
+                <input name="phone" type="text" placeholder="您的回答">
+                <p class="errMSG">請填寫手機號碼。</p>
+            </div>
+            <div class="form__items required hide-err">
+                <p class="item-title">報名類型</p>
+                <div class="form__radio-input">
+                    <label for="bed"><input class="radio-input" type="radio" name="type" value="bed" id="bed">躺在床上用想像力實作</label>
+                    <label for="ground"><input class="radio-input" type="radio" name="type" value="ground" id="ground">趴在地上滑手機找現成的</label>
+                </div>
+                <p class="errMSG">請選擇報名類型。</p>
+            </div>
+            <div class="form__items required hide-err">
+                <p class="item-title">怎麼知道這個活動的？</p>
+                <input name="referral" type="text" placeholder="您的回答">
+                <p class="errMSG">請填寫您的回答。</p>
+            </div>
+            <div class="form__items">
+                <p class="item-title">其他</p>
+                <p class="item-desc">對活動的一些建議</p>
+                <input name="comment" type="text" placeholder="您的回答">
+            </div>
+
+            <input class="btn-submit" type="submit" value="提交" />
+            <p>請勿透過表單送出您的密碼。</p>
+        </form>
+    </div>
+    <footer>© 2020 © Copyright. All rights Reserved.</footer>
+    <script type="text/javascript" src="valid.js"></script>
+</body>
+</html>

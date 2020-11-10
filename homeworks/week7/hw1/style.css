@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Arial","Microsoft JhengHei","微軟正黑體",sans-serif;
+    font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.wrapper{
+    box-sizing: border-box;
+    margin: 80px auto;
+    padding: 54px 42px;
+    max-width: 645px;
+    background-color: #fff;
+    border-top: 8px solid #fad312;
+    box-shadow: 1.8px 2.4px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* title 標題區 */
+h1{
+    font-size: 36px;
+    letter-spacing: -1.8px;
+    font-weight: bold;
+}
+
+.title__info{
+    line-height: 2em;
+    margin-top: 35px;
+    margin-bottom: 22px;
+}
+
+.title .notice-required{
+    font-size: 16px;
+    color: #e74149;
+}
+
+.required .item-title:after{
+    content: '*';
+    color: #e74149;
+}
+
+/*form 表單區*/
+form{
+    margin-top: 55px;
+}
+
+.item-title{
+    font-size: 20px;
+}
+
+.form__items+.form__items{
+    margin-top: 50px;
+}
+
+.form__items input[type=text]{
+    margin-top: 20px;
+    width: 287px;
+    height: 23px;
+    border: 1px solid #d0d0d0;
+    padding: 2px;
+    font-size: 16px;
+}
+
+.form__radio-input label{
+    display: block;
+    margin-top: 20px;
+}
+
+.form__radio-input input{
+    margin-right: 10px;
+    width: 12px;
+    height: 12px;
+    border: solid 1px #d0d0d0;
+    background-color: #bababa;
+}
+
+.item-desc{
+    margin-top: 12px;
+}
+
+.btn-submit{
+    margin: 55px 0 25px;
+    border: none;
+    border-radius: 3px;
+    background-color: #fad312;
+    width: 92px;
+    height: 40px;
+    font-size: 15px;
+}
+
+.errMSG{
+    margin-top: 12px;
+    color: #e74149;
+    /*解決錯誤訊息會移動版面高度的問題*/
+    position: absolute;
+}
+
+.hide-err .errMSG{
+    display: none;
+}
+
+
+
+/*footer 頁尾*/
+footer{
+    background-color: #000;
+    color: #999999;
+    font-size: 13px;
+    text-align: center;
+    padding: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper{
+        margin: 0;
+        max-width: 768px;
+    }
+}
