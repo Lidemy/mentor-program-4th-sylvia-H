@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fjalla+One&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     list-style: none;
-    font-family: "Questrial","Arial","Microsoft JhengHei","微軟正黑體",sans-serif;
+    font-family: "Arial","Microsoft JhengHei","微軟正黑體",sans-serif;
 }
 
 html{
