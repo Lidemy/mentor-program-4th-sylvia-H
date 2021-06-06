@@ -5,6 +5,7 @@
     padding: 0;
     list-style: none;
     font-family: "Questrial","arial","Microsoft JhengHei","微軟正黑體",sans-serif;
+    box-sizing: border-box;
 }
 
 a{
@@ -105,11 +106,28 @@ nav .wrapper{
 
 .content__game-after{
     background-color: rgba(255, 255, 255);
-    opacity: 0.4;
+    opacity: 0.5;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+}
+
+.firstPrize {
+    background:url("img/firstBG.jpg") center/cover no-repeat;
+}
+
+.secondPrize {
+    background:url("img/secondBG.jpg") center/cover no-repeat;
+}
+
+.thirdPrize {
+    background:url("img/thirdBG.jpg") center/cover no-repeat;
+}
+
+.nonePrize {
+    background: #000;
+    color: #fff;
 }
 
 
@@ -123,6 +141,20 @@ nav .wrapper{
     transform: translateX(-50%);
     background-color: #fff;
     border-radius: 16px;
+}
+
+
+@media screen and (max-width: 768px) { 
+    .game-method{
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: none;
+        background-color: rgba(255, 255, 255,0);
+        border-radius: 0;
+    }
 }
 
 .game-method h1{
@@ -162,6 +194,7 @@ nav .wrapper{
     border-radius: 8px;
     padding: 18px;
     margin: 30px auto;
+    cursor: pointer;
 }
 
 .btn-lottery:hover{

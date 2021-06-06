@@ -1,54 +1,65 @@
 const contentGame = document.querySelector('.content__game');
 const contentGameAfter = document.querySelector('.content__game-after');
+const gameMethod = document.querySelector('.game-method');
 const gameResult = document.querySelector('.game-result');
 const prizeItem = document.querySelector('.prize-item');
+const errMSG = '系統不穩定，請再試一次';
+let className;
+let prizeTitle;
 
 function lottery(e) {
   if (e.target.classList.contains('btn-lottery')) {
-    document.querySelector('.game-method').classList.add('hide');
-    prizeItem.style.color = '#292222';
-    prizeItem.innerText = ('');
-    gameResult.classList.remove('hide');
-
     const request = new XMLHttpRequest();
+    request.open('GET', 'https://dvwhnbka7d.execute-api.us-east-1.amazonaws.com/default/lottery', true);
     request.onload = function () {
       if (request.status >= 200 && request.status < 400) {
-        const obj = JSON.parse(request.responseText);
-        switch (obj.prize) {
-          case 'FIRST':
-            contentGameAfter.style.opacity = '0.4';
-            contentGame.style = 'background:url("img/firstBG.jpg") center/cover no-repeat;';
-            prizeItem.innerText = ('恭喜你中頭獎了！日本東京來回雙人遊！');
-            break;
-          case 'SECOND':
-            contentGameAfter.style.opacity = '0.4';
-            contentGame.style = 'background:url("img/secondBG.jpg") center/cover no-repeat;';
-            prizeItem.innerText = ('二獎！90 吋電視一台！');
-            break;
-          case 'THIRD':
-            contentGameAfter.style.opacity = '0.4';
-            contentGame.style = 'background:url("img/thirdBG.jpg") center/cover no-repeat;';
-            prizeItem.innerText = ('恭喜你抽中三獎：知名 YouTuber 簽名握手會入場券一張，bang！');
-            break;
-          case 'NONE':
-            contentGame.style.background = '#000';
-            contentGameAfter.style.opacity = '0';
+        let data;
+        try {
+          data = JSON.parse(request.responseText);
+        } catch (error) {
+          alert(errMSG);
+          console.log(error);
+          return;
+        }
+        if (data.prize) {
+          if (data.prize === 'FIRST') {
+            className = 'firstPrize';
+            prizeTitle = '恭喜你中頭獎了！日本東京來回雙人遊！';
+            prizeItem.style.color = '#292222';
+            contentGameAfter.style.opacity = '0.5';
+          } else if (data.prize === 'SECOND') {
+            className = 'secondPrize';
+            prizeTitle = '二獎！90 吋電視一台！';
+            prizeItem.style.color = '#292222';
+            contentGameAfter.style.opacity = '0.5';
+          } else if (data.prize === 'THIRD') {
+            className = 'thirdPrize';
+            prizeTitle = '恭喜你抽中三獎：知名 YouTuber 簽名握手會入場券一張，bang！';
+            prizeItem.style.color = '#292222';
+            contentGameAfter.style.opacity = '0.5';
+          } else if (data.prize === 'NONE') {
+            className = 'nonePrize';
+            prizeTitle = '銘謝惠顧';
             prizeItem.style.color = '#fff';
-            prizeItem.innerText = ('銘謝惠顧');
-            break;
-          default:
-            alert('系統不穩定，請再試一次');
+            contentGameAfter.style.opacity = '0';
+          } else {
+            alert(errMSG);
+            return;
+          }
+          gameMethod.classList.add('hide');
+          gameResult.classList.remove('hide');
+          contentGame.classList.add(className);
+          prizeItem.innerText = prizeTitle;
+        } else {
+          alert(errMSG);
         }
       } else {
-        prizeItem.innerText = ('');
-        alert('系統不穩定，請再試一次');
+        alert(errMSG);
       }
     };
     request.onerror = function () {
-      prizeItem.innerText = ('');
-      alert('系統不穩定，請再試一次');
+      alert(errMSG);
     };
-    request.open('GET', 'https://dvwhnbka7d.execute-api.us-east-1.amazonaws.com/default/lottery', true);
     request.send();
   }
 }
