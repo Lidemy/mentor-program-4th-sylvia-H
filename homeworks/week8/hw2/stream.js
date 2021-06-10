@@ -3,6 +3,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable func-names */
 /* eslint-disable prefer-arrow-callback */
+/* 程式碼優化重點：資料與 UI 分離、未來可能變動的資料設成變數。 */
 const GAME_URL = 'https://api.twitch.tv/kraken/games/top?limit=5';
 const STREAM_URL = 'https://api.twitch.tv/kraken/streams?game=';
 const CLIENT_ID = 'ovhkxvwlkldq4ihxon1yc97gr6ywm9';
