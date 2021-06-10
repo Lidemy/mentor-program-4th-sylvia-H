@@ -33,6 +33,7 @@ nav .wrapper{
 
 .nav__site-title{
     font-size: 32px;
+    color: #7313FF;
 }
 
 .nav__list{
@@ -177,4 +178,13 @@ nav .wrapper{
 
 .stream__name{
     font-size: 1em;
+}
+
+.empty-stream{
+    width: 30%;
+    max-width: 365px;
+    max-height: 265px;
+    content: '';
+    display: block;
+    margin: 16px;
 }
