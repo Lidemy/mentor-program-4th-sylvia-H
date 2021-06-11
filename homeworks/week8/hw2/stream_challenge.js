@@ -4,6 +4,8 @@
 /* eslint-disable func-names */
 /* eslint-disable prefer-arrow-callback */
 /* 程式碼優化重點：資料與 UI 分離、未來可能變動的資料設成變數。 */
+
+/* 變數區 */
 let STREAMS;
 let STREAMS_AMOUNT = 0;
 const GAME_URL = 'https://api.twitch.tv/kraken/games/top?limit=5';
@@ -22,6 +24,7 @@ const STREAM_TEMPLATE = `<img src="$preview" />
       </div>
   </div>`;
 
+/* getGames 功能：取得遊戲名稱資料 */
 function getGames(cb) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', GAME_URL, true);
@@ -45,6 +48,7 @@ function getGames(cb) {
   xhr.send();
 }
 
+/* getStreams 功能：取得實況資料 */
 function getStreams(gameName, cb) {
   const xhr2 = new XMLHttpRequest();
   xhr2.open('GET', `${STREAM_URL}${encodeURIComponent(gameName)}&limit=100`, true);
@@ -67,6 +71,7 @@ function getStreams(gameName, cb) {
   xhr2.send();
 }
 
+/* changeGame 功能：切換不同遊戲，並渲染該遊戲前 20 筆實況 */
 function changeGame(gameName) {
   document.querySelector('h1').innerText = gameName;
   document.querySelector('.streams').innerHTML = '';
@@ -88,13 +93,16 @@ function changeGame(gameName) {
       emptyItem.classList.add('empty-stream');
       document.querySelector('.streams').appendChild(emptyItem);
     }
+    /* 若回傳的實況資料筆數大於 20 筆，顯示「載入更多」按鈕 */
     if (STREAMS.length > STREAMS_AMOUNT) {
       document.querySelector('.btn-more').classList.remove('hide');
     }
+    /* 顯示「goTOP」按鈕 */
     document.querySelector('.btn-goTop').classList.remove('hide');
   });
 }
 
+/* getMoreStream 功能：載入更多實況，每次添加 20 筆 */
 function getMoreStream() {
   if (STREAMS.length > 20 && STREAMS.length > STREAMS_AMOUNT) {
     document.querySelectorAll('.empty-stream').forEach(el => el.remove());
@@ -112,12 +120,14 @@ function getMoreStream() {
     }
     STREAMS_AMOUNT += STREAM_MORE;
     console.log(`STREAMS_AMOUNT： ${STREAMS_AMOUNT}`, `STREAM_MORE： ${STREAM_MORE}`);
+    /* 若之後沒有更多實況資料，隱藏「載入更多」按鈕 */
     if (STREAMS.length === STREAMS_AMOUNT) {
       document.querySelector('.btn-more').classList.add('hide');
     }
   } else {
     return;
   }
+  /* 添加空白的 empty-stream 實況方框在最後一列 */
   if (STREAMS_AMOUNT % 3 !== 0) {
     for (let i = 0; i < 3 - (STREAMS_AMOUNT % 3); i += 1) {
       const emptyItem = document.createElement('div');
@@ -127,6 +137,7 @@ function getMoreStream() {
   }
 }
 
+/* 第一步驟：取得遊戲名稱，渲染 navbar 和第一個遊戲的前 20 筆實況資料 */
 getGames(function (games) {
   for (const game of games) {
     const item = document.createElement('li');
@@ -136,9 +147,11 @@ getGames(function (games) {
   changeGame(games[0].game.name);
 });
 
+/* 第二步驟：若點選 navbar 切換遊戲時，實況資料同步變動 */
 document.querySelector('.nav__list').addEventListener('click', function (e) {
   const gameName = e.target.innerText;
   changeGame(gameName);
 });
 
+/* 第三步驟：若點選「載入更多」按鈕，實況資料添加 20 筆 */
 document.querySelector('.btn-more').addEventListener('click', getMoreStream);
