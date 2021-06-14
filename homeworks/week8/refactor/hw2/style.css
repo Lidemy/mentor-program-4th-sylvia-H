@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Questrial&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Questrial","arial","Microsoft JhengHei","微軟正黑體",sans-serif;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.hide{
+    display: none;
+}
+
+
+/* navbar 導覽列 */
+nav{
+    box-shadow: -1.4px -1.4px 6px 0px #97a2a0;
+    padding: 0 24px;
+}
+
+nav .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: #fff;
+}
+
+.nav__site-title{
+    font-size: 32px;
+    color: #7313FF;
+}
+
+.nav__list{
+    display: flex;
+    font-size: 16px;
+}
+
+.nav__list li{
+    margin-left:12px;
+    padding: 14px;
+    border-bottom: 5px solid #fff;
+    color: #000;
+}
+
+.nav__list li.active,
+.nav__list li:hover{
+    color: #304D6D;
+    font-weight: bold;
+    border-bottom: 5px solid #00BBF9;
+}
+
+@media screen and (max-width: 768px) {
+    nav{
+        padding: 0;
+    }
+    nav .wrapper{
+        flex-direction: column;
+        height: 140px;
+        padding: 0;
+    }
+    .nav__site-logo{
+        margin-top: 10px;
+    }
+    .nav__list{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .nav__list li{
+        min-width: 150px;
+        margin-left: 0;
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+
+/* content 主內容 */
+.content{
+    text-align: center;
+    background: url(img/bg.jpg) center center fixed repeat-x;
+    position: relative;
+}
+
+.content:after{
+    position: absolute;
+    display: block;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.content .wrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 30px ;
+}
+
+.content__title{
+    position: relative;
+    color: #fff;
+    z-index: 10;
+    margin-bottom: 50px;
+}
+
+
+/* stream 頻道 */
+
+.streams{
+    position: relative;
+    z-index: 10;
+    margin: 30px auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stream{
+    max-width: 365px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
+    margin: 16px;
+    transition: all 0.2s;
+}
+
+.stream:hover{
+    box-shadow: 0px 0px 8px 0px #000;
+    transform: scale(1.05);
+}
+
+.stream>img{
+    width: 100%;
+}
+
+.stream__data{
+    display: flex;
+    padding: 5px;
+}
+
+.stream__avatar{
+    flex: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    min-width: 50px;
+}
+
+.stream__avatar>img{
+    width: 100%;
+    height: 100%;
+}
+
+.stream__info{
+    flex: 5;
+    overflow: hidden;
+}
+
+.stream__discrip{
+    font-size: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+}
+
+.stream__name{
+    font-size: 1em;
+}
+
+.empty-stream{
+    width: 30%;
+    max-width: 365px;
+    max-height: 265px;
+    content: '';
+    display: block;
+    margin: 16px;
+}
+
+.btn-more{
+    position: relative;
+    width: 50%;
+    background-color: royalblue;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    margin: 25px auto;
+    z-index: 10;
+}
+
+.btn-goTop{
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    background-color:tomato;
+    color:#fff;
+    font-weight: bold;
+    font-size: 24px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 0 0 90%;
+}

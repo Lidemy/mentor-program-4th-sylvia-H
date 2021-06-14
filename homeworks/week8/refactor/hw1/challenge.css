@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Questrial&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Questrial","arial","Microsoft JhengHei","微軟正黑體",sans-serif;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.wrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.hide{
+    display: none;
+}
+
+.cutdown{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#countdownnumber{
+    margin: 0 12px;
+}
+
+table{
+    margin: 15vh auto;
+    border: 5px solid #4A5240;
+    border-style: double;
+    box-shadow: 3px 3px 8px 3px #727E63;
+}
+
+th{
+    border: 1px solid #4A5240;
+    background-color: #D8E2DC;
+    padding: 8px 30px;
+}
+
+td{
+    border-collapse: collapse;
+    border: 1px solid #21A179;
+    padding: 8px 30px;
+}
